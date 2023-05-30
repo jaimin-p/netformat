@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://elmah.io/tools/stack-trace-formatter/ -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+<meta http-equiv="cleartype" content="on">
+<![endif]-->
+    <meta name="description"
+        content="Using the .NET stack trace formatter, you can pretty print any stack trace and either copy and paste it or download a screenshot for your blog post.">
+    <title>Stack Trace Formatter - Pretty print your exception messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-title" content="elmah.io">
+    <link rel="manifest" href="https://elmah.io/site.webmanifest">
+    <link rel="canonical" href="https://elmah.io/tools/stack-trace-formatter/">
+    <link rel="preload" href="https://elmah.io/css/fontawesome/webfonts/fa-brands-400.woff2" as="font" crossorigin="">
+    <link rel="preload" href="https://elmah.io/css/fontawesome/webfonts/fa-light-300.woff2" as="font" crossorigin="">
+    <link rel="preload" href="https://elmah.io/css/fontawesome/webfonts/fa-solid-900.woff2" as="font" crossorigin="">
+    <link href="./js/style.min.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" href="https://elmah.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://elmah.io/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://elmah.io/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="https://elmah.io/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://elmah.io/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://elmah.io/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#0da58e">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@elmah_io">
+    <meta name="twitter:creator" content="@elmah_io">
+    <meta name="twitter:title" content="Pretty print your exception messages">
+    <meta name="twitter:description"
+        content="Using the .NET stack trace formatter, you can pretty print any stack trace and either copy and paste it or download a screenshot for your blog post.">
+    <meta name="twitter:image" content="https://elmah.io/images/tools/stacktrace-formatter-text.png">
+    <meta property="og:site_name" content="elmah.io">
+    <meta property="og:title" content="Pretty print your exception messages">
+    <meta property="og:description"
+        content="Using the .NET stack trace formatter, you can pretty print any stack trace and either copy and paste it or download a screenshot for your blog post.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elmah.io/tools/stack-trace-formatter/">
+    <meta property="og:image" content="https://elmah.io/images/tools/stacktrace-formatter-text.png">
+    <meta property="og:image:width" content="880">
+    <meta property="og:image:height" content="471">
+    <meta property="fb:app_id" content="218008838347208">
+    <script type="text/javascript" async=""
+        src="./js/saved_resource"></script>
+    <script type="text/javascript" charset="UTF-8" async=""
+        src="./js/state.js.download"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="./js/configuration.js.download"></script>
+    <script defer="" referrerpolicy="origin"
+        src="./js/s.js.download"></script>
+    <script
+        nonce="">(function (w, d) { !function (dk, dl, dm, dn) { dk[dm] = dk[dm] || {}; dk[dm].executed = []; dk.zaraz = { deferred: [], listeners: [] }; dk.zaraz.q = []; dk.zaraz._f = function (dp) { return function () { var dq = Array.prototype.slice.call(arguments); dk.zaraz.q.push({ m: dp, a: dq }) } }; for (const dr of ["track", "set", "debug"]) dk.zaraz[dr] = dk.zaraz._f(dr); dk.zaraz.init = () => { var ds = dl.getElementsByTagName(dn)[0], dt = dl.createElement(dn), du = dl.getElementsByTagName("title")[0]; du && (dk[dm].t = dl.getElementsByTagName("title")[0].text); dk[dm].x = Math.random(); dk[dm].w = dk.screen.width; dk[dm].h = dk.screen.height; dk[dm].j = dk.innerHeight; dk[dm].e = dk.innerWidth; dk[dm].l = dk.location.href; dk[dm].r = dl.referrer; dk[dm].k = dk.screen.colorDepth; dk[dm].n = dl.characterSet; dk[dm].o = (new Date).getTimezoneOffset(); dk[dm].q = []; for (; dk.zaraz.q.length;) { const dB = dk.zaraz.q.shift(); dk[dm].q.push(dB) } dt.defer = !0; for (const dC of [localStorage, sessionStorage]) Object.keys(dC || {}).filter((dE => dE.startsWith("_zaraz_"))).forEach((dD => { try { dk[dm]["z_" + dD.slice(7)] = JSON.parse(dC.getItem(dD)) } catch { dk[dm]["z_" + dD.slice(7)] = dC.getItem(dD) } })); dt.referrerPolicy = "origin"; dt.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(dk[dm]))); ds.parentNode.insertBefore(dt, ds) };["complete", "interactive"].includes(dl.readyState) ? zaraz.init() : dk.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+    <style type="text/css">
+        .hljs-ln {
+            border-collapse: collapse
+        }
+
+        .hljs-ln td {
+            padding: 0
+        }
+
+        .hljs-ln-n:before {
+            content: attr(data-line-number)
+        }
+    </style>
+    <style type="text/css" id="CookieConsentStateDisplayStyles">
+        .cookieconsent-optin-preferences,
+        .cookieconsent-optin-statistics,
+        .cookieconsent-optin-marketing,
+        .cookieconsent-optin {
+            display: none;
+        }
+
+        .cookieconsent-optout-preferences,
+        .cookieconsent-optout-statistics,
+        .cookieconsent-optout-marketing,
+        .cookieconsent-optout {
+            display: block;
+            display: initial;
+        }
+    </style>
+</head>
+
+<body class="body-gray">
+
+    <!-- Validator section -->
+    <div class="section">
+        <div class="container position-relative tool-page-height">
+            <div class="section-body mb-4">
+                <form method="post" action="https://elmah.io/tools/stack-trace-formatter/#">
+                    <div class="form-group position-relative">
+                        <label>Paste your stack trace here:</label>
+                        <textarea class="form-control stacktrace-input-textarea tools-shadow"
+                            data-bind="textInput: input, style: { height: minimizeInput() ? &#39;150px&#39; : &#39;&#39;}"
+                            style="height: 150px;"></textarea>
+                    </div>
+                    <div class="form-group mb-0" data-bind="visible: content" style="">
+                        <label>Formatted stack trace:</label>
+                        <div class="card card-stacktrace tools-shadow">
+                            <div class="card-body p-0">
+                                <div class="screenshot-wrapper">
+                                    <pre>
+                                        <code class="stacktrace" data-bind="text: content"></code>
+                                    </pre>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex align-content-center">
+                                <button class="btn btn-sm btn-primary mr-1" id="cpybutton" data-toggle="tooltip"
+                                    data-placement="bottom" data-container=".card-stacktrace .card-footer"
+                                    data-trigger="manual" title="" data-clipboard-target=".stacktrace"
+                                    data-original-title="Copied!">
+                                    <span class="label">Copy</span>
+                                </button>
+                                <button class="btn btn-sm btn-primary mr-1" id="mrkdbutton" data-toggle="tooltip"
+                                    data-placement="bottom" data-container=".card-stacktrace .card-footer"
+                                    data-trigger="manual" title="" data-original-title="Copied!">
+                                    <span class="label">Markdown</span>
+                                </button>
+                                <div class="custom-control custom-checkbox ml-auto py-1 d-none d-md-block">
+                                    <input type="checkbox" class="custom-control-input" id="wrapText">
+                                    <label class="custom-control-label" for="wrapText">Wrap text</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="canvas-append"></div>
+                </form>
+            </div>
+            <script src="./js/script.min.js.download"
+                type="text/javascript"></script>
+
+            <script
+                src="./js/stacktraceformatter.min.js.download"
+                type="text/javascript"></script>
+
+
+
+            <script type="text/javascript" id="Cookiebot"
+                src="./js/uc.js.download"
+                data-cbid="6c644bae-8146-49b2-a6b4-b0d24211957d" data-blockingmode="auto"></script>
+
+            <div id="intercom-container" class="intercom-namespace">
+                <style>
+                    html.intercom-mobile-messenger-active,
+                    html.intercom-mobile-messenger-active>body,
+                    html.intercom-modal-open,
+                    #intercom-container-body {
+                        overflow: hidden !important;
+                    }
+
+                    html.intercom-mobile-messenger-active,
+                    html.intercom-mobile-messenger-active>body {
+                        position: static !important;
+                        transform: none !important;
+                    }
+
+                    html.intercom-mobile-messenger-active>body {
+                        height: 0 !important;
+                        margin: 0 !important;
+                    }
+
+                    html.intercom-mobile-messenger-active.intercom-mobile-messenger-ios-15>body {
+                        height: 100vh !important;
+                    }
+
+                    iframe#intercom-frame {
+                        position: absolute !important;
+                        opacity: 0 !important;
+                        width: 1px !important;
+                        height: 1px !important;
+                        top: 0 !important;
+                        left: 0 !important;
+                        border: none !important;
+                        display: block !important;
+                        z-index: -1 !important;
+                    }
+                </style>
+            </div>
+            <div id="intercom-css-container">
+                <style data-emotion="intercom-global"></style>
+                <style data-emotion="intercom"></style>
+            </div>
+</body>
+
+</html>
